@@ -186,6 +186,7 @@ html{
     position: absolute;
     width: max-content;
     padding:10px;
+    padding-top: 0px;
     left: 20px;
     top:20px;
     border-radius: 3px;
@@ -226,4 +227,11 @@ label{
     font-size: 15px;
     border-radius: 4px;
     margin-left: -10px;
+}
+
+.heart{
+    height: 20px;
+    margin: 4px;
+    position: relative;
+    top: 8px;
 }
