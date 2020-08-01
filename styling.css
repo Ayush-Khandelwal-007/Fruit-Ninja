@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Zetta&display=swap');
 html{
     height: 100% ;
     background: radial-gradient(circle,white,#ccc);
@@ -23,7 +24,7 @@ html{
 
 #menubar div{
     margin: 15px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Lexend Zetta', sans-serif; 
     font-size: 10px;
     background-color: wheat;
     border: inset 2px rgb(151, 90, 19);
@@ -55,7 +56,11 @@ html{
     margin: 0px 0px;
     top: 10px;
     left: 15px;
+    /* cursor: url(images/apple.png),auto; */
+    overflow: hidden;
     display: flex;
+    justify-content: center;
+    align-items: center;
     display: none;
 }
 
@@ -63,6 +68,7 @@ html{
     background: #e1ff1da2;
     color: #3b4118;
     padding: 5px 10px;
+    /* cursor: url(images/apple.png),auto; */
     box-shadow:#9da853 0px 4px 2px;
     position: absolute;
     left: 91%;
@@ -188,6 +194,7 @@ html{
     padding:10px;
     padding-top: 0px;
     left: 20px;
+    /* cursor: url(images/apple.png),auto; */
     top:20px;
     border-radius: 3px;
     background-color: rgba(182, 255, 36, 0.63);
@@ -234,4 +241,43 @@ label{
     margin: 4px;
     position: relative;
     top: 8px;
+}
+
+#fruit{
+    height:auto;
+    z-index: 3;
+    width:90px;
+    position: absolute;
+    /* display: none; */
+    /* cursor: url(images/apple.png),auto; */
+}
+
+#endgame{
+    display: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: max-content;
+    height: max-content;
+    font-size: 20px;
+    color: rgb(21, 88, 21);
+    align-self: center;
+    background: rgb(255, 175, 71);
+    padding: 30px;
+    border: solid 7px coral;
+    border-radius: 5px;
+    transform: scale(1.3);
+    text-align: center;
+}
+
+#fsc{
+    color: mediumblue;
+}
+
+#endgame div{
+    margin: 15px;
+    font-family: 'Lexend Zetta', sans-serif; 
+    font-size: 10px;
+    background-color: wheat;
+    border: inset 2px rgb(151, 90, 19);
+    border-radius: 10px;
+    padding: 5px;
 }

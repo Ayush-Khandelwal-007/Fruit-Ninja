@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
         <link rel="stylesheet" href="styling.css">
-        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/trontastic/jquery-ui.css">
     </head>
     <body>
         <div id="menubar">
@@ -16,15 +16,15 @@
             <div id="score">
                 Score:<span id="value">100</span>
             </div>
-            <div id="hscore">
-                High Score:<span id="hvalue">0</span>
-            </div>
-            <img id="fruit" class="fruit" src="images/grapes.png">
-            <div id="startreset">
-                Start Game
-            </div>
+            <img id="fruit" class="fruit" src="images/apple.png">
             <div id="liferem">
                 Life Remaining :<span id="life"> </span>
+            </div>
+            <div id="endgame" class="ui-state-highlight">
+                Furit salad is ready!<br>Your score is<br><br><strong> <span id="fsc">x</span></strong>
+                <br>
+                <div class="start" id="restart">Go Back To Main Menu</div>
+                <div class="start" >See High Score</div>
             </div>
         </div>
     </body>
