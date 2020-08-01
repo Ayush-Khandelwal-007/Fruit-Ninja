@@ -37,7 +37,7 @@ $("#fruit").mouseover(function(){
     $("#fruit").css({'display':'flex'});
     clearInterval(action);
     
-    setTimeout(startFruits, 500);
+    setTimeout(startFruits, 800);
 });
 
 function addHeart(){
