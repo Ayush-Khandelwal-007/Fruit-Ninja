@@ -22,19 +22,22 @@ $(function(){
             startFruits();
         }
     });
+    
+    $("#restart").click(function(){
+        location.reload();
+    });
 });
 
 $("#fruit").mouseover(function(){
     score++;
     $("#value").html(score);
-    //$("#slicesound")[0].play();
-    
+    if(dropSpeed<=10){dropSpeed+=1;}
+    $("#slicesound")[0].play();
+    $("#fruit").hide("explode", 500); console.log("1");
+    $("#fruit").css({'display':'flex'});
     clearInterval(action);
     
-
-    $("#fruit").hide("explode", 500); 
-    
-    setTimeout(startFruits, 80);
+    setTimeout(startFruits, 500);
 });
 
 function addHeart(){
@@ -45,9 +48,9 @@ function addHeart(){
 }
 
 function startFruits(){
-    $("#fruit").show;
     chooseFruit();
-    $("#fruit").css({'left' : Math.round(($("#container").width()-150)*Math.random())+200, 'top' : -50}); 
+    $("#fruit").css({'left' : Math.round(($("#container").width()-350)*Math.random())+200, 'top' : -50});
+    $("#fruit").css({'display':'flex'});
 
     dropSpeed+=1;
     action = setInterval(function(){
@@ -57,10 +60,9 @@ function startFruits(){
             
             if(lives > 1 ){
                 
-                $("#fruit").show();
+                $("#fruit").css({'display':'flex'});
                 chooseFruit();
-                $("#fruit").css({'left' : Math.round(($("#container").width()-150)*Math.random())+200, 'top' : -50});
-                dropSpeed+=1;
+                $("#fruit").css({'left' : Math.round(($("#container").width()-350)*Math.random())+200, 'top' : -50});
                 
                 lives-=1;
                 
@@ -69,6 +71,9 @@ function startFruits(){
             }else{ 
                 playing = false;
                 $("#fsc").text(score);
+                lives-=1;
+                
+                addHeart();
                 $("#endgame").show();
                 stopAction();
             }
@@ -82,5 +87,5 @@ function chooseFruit(){
 
 function stopAction(){
     clearInterval(action);
-    $("#fruit").hide();
+    $("#fruit").hide();console.log("2");
 }
