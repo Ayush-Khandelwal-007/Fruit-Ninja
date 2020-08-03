@@ -16,6 +16,7 @@ $(function(){
             score=0;
             $("#value").html(score);
             $("#menubar").hide();
+            $("#liferem").css('display','flex');
             $("#container").css({'display':'flex'});
             lives=3;
             addHeart();
@@ -28,17 +29,7 @@ $(function(){
     });
 });
 
-$("#fruit").mouseover(function(){
-    score++;
-    $("#value").html(score);
-    if(dropSpeed<=10){dropSpeed+=1;}
-    $("#slicesound")[0].play();
-    $("#fruit").hide("explode", 500); console.log("1");
-    $("#fruit").css({'display':'flex'});
-    clearInterval(action);
-    
-    setTimeout(startFruits, 800);
-});
+$("#fruit").mouseover(cut);
 
 function addHeart(){
     $("#life").empty();
@@ -51,8 +42,10 @@ function startFruits(){
     chooseFruit();
     $("#fruit").css({'left' : Math.round(($("#container").width()-350)*Math.random())+200, 'top' : -50});
     $("#fruit").css({'display':'flex'});
-
-    dropSpeed+=1;
+    if(dropSpeed<=13){
+        dropSpeed+=1;
+    }
+    console.log("dropSpeed", dropSpeed)
     action = setInterval(function(){
         
         $("#fruit").css('top', $("#fruit").position().top + dropSpeed);
@@ -70,6 +63,7 @@ function startFruits(){
                 
             }else{ 
                 playing = false;
+                $("#liferem").css('display','none');
                 $("#fsc").text(score);
                 lives-=1;
                 
@@ -88,4 +82,15 @@ function chooseFruit(){
 function stopAction(){
     clearInterval(action);
     $("#fruit").hide();console.log("2");
+}
+
+function cut(){
+    score++;
+    $("#value").html(score);
+    $("#slicesound")[0].play();
+    $("#fruit").hide("explode", 500); console.log("1");
+    $("#fruit").css({'display':'flex'});
+    clearInterval(action);
+    
+    setTimeout(startFruits, 800);
 }
