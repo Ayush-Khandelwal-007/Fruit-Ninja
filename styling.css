@@ -1,35 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Zetta&display=swap');
 html{
-    height: 100% ;
-    background: radial-gradient(circle,white,#ccc);
+    height:100vh ;
+    /* background: radial-gradient(circle,white,#ccc); */
     background-image: url(images/main.png);
-    background-repeat: no-repeat;
+    background-repeat: repeat-x; 
     background-size: 100% 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    overflow: hidden;
+    margin:0px;
 }
+
+body{
+    height:100vh ;
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: hidden;
+    margin:0px;
+}
+
 #menubar{
     height: auto;
     width: max-content;
     align-self: center;
     background: rgb(255, 175, 71);
-    padding: 20px;
-    border: solid 7px coral;
-    border-radius: 25px;
+    padding: 1.2vw;
+    border: solid 0.7vw coral;
+    border-radius: 3vw;
     transform: scale(2.3);
     text-align: center;
 }
 
 #menubar div{
-    margin: 15px;
+    margin:1vw;
     font-family: 'Lexend Zetta', sans-serif; 
-    font-size: 10px;
+    font-size: 0.7vw;
     background-color: wheat;
-    border: inset 2px rgb(151, 90, 19);
+    border: inset 0.2vw rgb(151, 90, 19);
     border-radius: 10px;
-    padding: 5px;
+    padding: 0.4vw;
 }
 
 #menubar div:hover{
@@ -47,15 +60,13 @@ html{
     width: 98vw;
     background-image:url(images/background.jpg);
     background-size: 100% 100%;
-    background-color: #cccccc;
     background-repeat: no-repeat;
     background-attachment: scroll;  
     background-position: center; 
     border-radius: 10px;
-    position: absolute;
-    margin: 0px 0px;
-    top: 10px;
-    left: 15px;
+    position:relative;
+    /* top:1vh;
+    left: 1.6vh;  */
     /* cursor: url(images/apple.png),auto; */
     overflow: hidden;
     display: flex;
@@ -66,13 +77,14 @@ html{
 
 #score{
     background: #e1ff1da2;
+    font-size: 1.5vw;
     color: #3b4118;
-    padding: 5px 10px;
+    padding: 1vh 1vw;
     /* cursor: url(images/apple.png),auto; */
-    box-shadow:#9da853 0px 4px 2px;
+    box-shadow:#4c5514 0 0.6vh 0.26vh;
     position: absolute;
-    left: 91%;
-    top:20px;
+    left: 88vw;
+    top:1.7vh;
 }
 
 /* #hscore{
@@ -191,25 +203,25 @@ html{
 #liferem{
     position: absolute;
     width: max-content;
-    padding:10px;
-    padding-top: 0px;
+    padding:1.1vh;
+    /* padding-top: 0px; */
     left: 20px;
     /* cursor: url(images/apple.png),auto; */
-    top:20px;
+    top:1vh;
     border-radius: 3px;
     background-color: rgba(182, 255, 36, 0.63);
-    box-shadow: rgba(0, 0, 0,0.3) 0px 4px 2px;
-    /* display: none; */
+    box-shadow: rgba(0, 0, 0,0.3) 0 1vh 0.2vh;
+    display: none;
 }
 
-
+/* 
 
 #set{
     margin-left: 5px;
     border-radius: 5px;
-}
+} */
 
-#timereq{
+/* #timereq{
     background-color: rgba(199, 253, 117, 0.548);
     margin-left: 5px;
 }
@@ -220,19 +232,19 @@ label{
     font-size: 15px;
     border-radius: 4px;
     margin-left: -10px;
-}
+} */
 
 .heart{
-    height: 20px;
-    margin: 4px;
+    height:2.5vh;
+    margin: 0.2vw;
     position: relative;
-    top: 8px;
+    top: 0.1vh;
 }
 
 #fruit{
     height:auto;
     z-index: 3;
-    width:90px;
+    width:7vw;
     position: absolute;
     /* display: none; */
     /* cursor: url(images/apple.png),auto; */
@@ -243,11 +255,11 @@ label{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     width: max-content;
     height: max-content;
-    font-size: 20px;
+    font-size: 2vw;
     color: rgb(21, 88, 21);
     align-self: center;
     background: rgb(255, 175, 71);
-    padding: 30px;
+    padding: 3vw;
     border: solid 7px coral;
     border-radius: 5px;
     transform: scale(1.3);
@@ -259,13 +271,13 @@ label{
 }
 
 #endgame div{
-    margin: 15px;
+    margin:1vw;
     font-family: 'Lexend Zetta', sans-serif; 
-    font-size: 10px;
+    font-size: 0.7vw;
     background-color: wheat;
-    border: inset 2px rgb(151, 90, 19);
+    border: inset 0.2vw rgb(151, 90, 19);
     border-radius: 10px;
-    padding: 5px;
+    padding: 0.4vw;
 }
 
 #endgame div:hover{
