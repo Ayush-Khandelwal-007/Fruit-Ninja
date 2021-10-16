@@ -1,38 +1,61 @@
 <!DOCTYPE html>
 <html lang="en ">
-    <head>
-        <title>Fruit Ninja</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <link rel="stylesheet" href="styling.css">
-        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/trontastic/jquery-ui.css">
-    </head>
-    <body>
-        <div id="menubar">
-            <div class="start" id="start">Start Cutting The Fruits</div>
-            <div class="start" >See High Score</div>
+
+<head>
+    <title>Fruit Ninja</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="styling.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/trontastic/jquery-ui.css">
+</head>
+
+<body>
+    <div id="menubar">
+        <div class="start" id="start">Start Cutting The Fruits</div>
+        <div class="start" id="highScore">See High Score</div>
+    </div>
+    <div id="container">
+        <div id="score">
+            Score:<span id="value">100</span>
         </div>
-        <div id="container">
-            <div id="score">
-                Score:<span id="value">100</span>
-            </div>
-            <img id="fruit" class="fruit" src="images/apple.png">
-            <div id="liferem">
-                <span id="life"> </span>
-            </div>
-            <div id="endgame" class="ui-state-highlight">
-                Furit salad is ready!<br>Your score is<br><br><strong> <span id="fsc">x</span></strong>
-                <br>
-                <div class="start" id="restart">Go Back To Main Menu</div>
-                <div class="start" >See High Score</div>
-            </div>
+        <img id="fruit" class="fruit" src="images/apple.png">
+        <div id="liferem">
+            <span id="life"> </span>
         </div>
+        <div id="endgame" class="ui-state-highlight">
+            Furit salad is ready!<br>Your score is<br><br><strong> <span id="fsc">x</span></strong>
+            <br>
+            <div class="start" id="restart">Go Back To Main Menu</div>
+            <div class="start" id="highScore1">See High Score</div>
+        </div>
+    </div>
     <audio id="slicesound">
-        <source src="audio/slicefruit.mp3"></source>
-        <source src="audio/slicefruit.ogg"></source>
+        <source src="audio/slicefruit.mp3">
+        </source>
+        <source src="audio/slicefruit.ogg">
+        </source>
     </audio>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src='https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js'></script>
+    <script src='https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js'></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyAw2CIQwGddayi1XUY2Qlc7zZFB3hVburY",
+            authDomain: "fruit-ninja-cb70e.firebaseapp.com",
+            databaseURL: "https://fruit-ninja-cb70e-default-rtdb.firebaseio.com",
+            projectId: "fruit-ninja-cb70e",
+            storageBucket: "fruit-ninja-cb70e.appspot.com",
+            messagingSenderId: "58196438037",
+            appId: "1:58196438037:web:8930f8457c363fd472b21c",
+            measurementId: "G-E3MST60L29"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.database();
+    </script>
     <script src="jquery.js"></script>
 </body>
+
 </html>

@@ -3,10 +3,34 @@ var score =0;
 var lives;
 var dropSpeed=1;
 var action;
+var highScore=0;
 
 var fruits = ['apple', 'banana', 'grapes', 'mango', 'orange', 'peach', 'pear', 'pineapple','tomato','watermelon'];
-$(function(){
-    
+
+function getHighScore() {
+    var dbRef = db.ref().child("scores");
+    dbRef.on('value', (snapshot) => {
+        const data = snapshot.val();
+        if(data!=null){
+            highScore=data;
+        }
+    });
+}
+
+function showHighScore(){
+    window.alert("High Score: "+highScore);
+}
+
+$(function(){    
+    getHighScore();
+
+    $("#highScore").click(function(){
+        showHighScore();
+    });
+    $("#highScore1").click(function(){
+        showHighScore();
+    });
+
     $("#start").click(function(){
         if(isPlaying==true){
             location.reload();
@@ -80,15 +104,19 @@ function chooseFruit(){
 }
 
 function stopAction(){
+    if(score>highScore){
+        highScore=score;
+        db.ref().child("scores").set(highScore);
+    }
     clearInterval(action);
-    $("#fruit").hide();console.log("2");
+    $("#fruit").hide();
 }
 
 function cut(){
     score++;
     $("#value").html(score);
     $("#slicesound")[0].play();
-    $("#fruit").hide("explode", 500); console.log("1");
+    $("#fruit").hide("explode", 500); 
     $("#fruit").css({'display':'flex'});
     clearInterval(action);
     
